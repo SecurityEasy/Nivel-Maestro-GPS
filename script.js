@@ -8,7 +8,7 @@ let premios = [
 
 premios = shuffleArray(premios); // ✅ primero baraja
 
-const fixedPremio = "2 Renovaciones \nde 10 años \n+ 1 ET200N \n+ 10 SIM Telcel";
+const fixedPremio = "2 VL103M \n+ 1 R83 \n+ 15 SIM Telcel"";
 
 const fixedIndex = premios.findIndex(p =>
   p.replace(/\n/g, " ").trim() === fixedPremio.replace(/\n/g, " ").trim()
