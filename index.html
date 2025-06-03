@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruleta Nivel Brillante</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #111;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
 
+    .banner {
+      width: 100%;
+      max-width: 400px;
+      margin-top: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 20px 0 10px;
+      color: #f44336;
+    }
+
+    .instrucciones {
+      font-size: 16px;
+      color: #e2e2e2;
+      margin-bottom: 20px;
+    }
+
+    .ruleta-contenedor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+
+    .wheel-wrapper {
+      position: relative;
+      width: 500px;
+      height: 500px;
+    }
+
+    canvas#wheel {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .logo {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      z-index: 10;
+    }
+
+.fuego {
+  position: absolute;
+  left: 50%;
+  bottom: -177px;
+  transform: translateX(-50%);
+  width: 200px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+    #spin {
+      margin-top: 2rem;
+      padding: 12px 30px;
+      background-color: #f78f1e;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #spin:hover {
+      background-color: #ffb347;
+    }
+
+    #resultado {
+      font-size: 1.2em;
+      margin-top: 20px;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <img src="assets/HOTSALE.png" alt="Hot Sale Banner" class="banner" />
+
+  <h1>¡Gira la Security Ruleta y gana grandes premios!</h1>
+  <p class="instrucciones">
+    Recuerda que sólo podrás girar la ruleta una vez, tu premio nos llegará en automático, ¡mucha suerte!
+  </p>
+
+  <div class="ruleta-contenedor">
+    <div class="wheel-wrapper">
+      <canvas id="wheel" width="500" height="500"></canvas>
+      <img src="assets/logo.jpg" alt="Logo Security Easy" class="logo" />
+      <img src="assets/fuego.png" alt="Pointer" class="fuego" id="fuego" />
+    </div>
+    <button id="spin">GIRAR</button>
+    <p id="resultado"></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
